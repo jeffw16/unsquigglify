@@ -1,6 +1,6 @@
 const mapping = {
     '्': '',
-    '़': '', // TO-DO: ADD SUPPORT FOR PERSIAN LOAN CHARACTERS SUCH AS Q, F, and Z
+    '़': '',
     'ँ': '',
 
     'अ': 'a',
@@ -27,8 +27,8 @@ const mapping = {
     'ै': 'ai',
     'ो': 'o',
     'ौ': 'au',
-    'ं': 'aṃ',
-    'ः': 'aha',
+    'ं': 'n',
+    'ः': 'ha',
 
     'क' : 'k',
     'ख' : 'kh',
@@ -159,6 +159,7 @@ const matras = {
     'ः': 'aha'
 };
 const halant = '्';
+const nuqta = '़';
 
 const elems = document.getElementsByTagName("*");
 
@@ -186,10 +187,21 @@ chrome.storage.sync.get('mode', function(data) {
     
                         if (translit !== undefined) {
                             if (mode === 0) {
-                                if (consonants[char] !== undefined && matras[nextChar] === undefined && nextChar !== halant) {
-                                    newText += translit + 'a';
+                                if (nextChar === nuqta) {
+                                    if (char === 'ज') {
+                                        newText += 'z';
+                                    } else if (char === 'फ') {
+                                        newText += 'f';
+                                    } else if (char === 'क') {
+                                        newText += 'q';
+                                    } else if (char === 'ख') {
+                                        newText += 'qh';
+                                    }
                                 } else {
                                     newText += translit;
+                                }
+                                if (consonants[char] !== undefined && matras[nextChar] === undefined && nextChar !== halant) {
+                                    newText += 'a';
                                 }
                             } else if (mode === 2) {
                                 newText += char + translit;
