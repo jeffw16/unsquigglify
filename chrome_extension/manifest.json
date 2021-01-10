@@ -1,6 +1,6 @@
 {
     "name": "Unsquigglify",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Transliterates Devanagari script into Latin script.",
     "manifest_version": 2,
     "options_page": "options.html",
