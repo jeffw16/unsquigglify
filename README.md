@@ -1,5 +1,6 @@
 # Unsquigglify
 English: Unsquigglify converts Devanagari script (from languages such as Hindi, Marathi, and Sanskrit) into their Latin equivalent.
+
 हिन्दी: Unsquigglify देवनागरी टेक्स्ट के लिए webpage ढूँढता है और देवनागरी टेक्स्ट से लैटिन टेक्स्ट बनता है।
 
 Download at: https://chrome.google.com/webstore/detail/unsquigglify/hijeknaoggopnoaekocnhphkfgmeahem
